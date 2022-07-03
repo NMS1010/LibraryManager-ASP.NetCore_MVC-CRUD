@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <Id>1</Id>
+    <Name>ASP.NET Core for dummy</Name>
+    <Authors>Donald Trump</Authors>
+    <Publisher>Apress</Publisher>
+    <Year>2018</Year>
+  </Book>
+  <Book>
+    <Id>2</Id>
+    <Name>Professional ASP.NET Core 3</Name>
+    <Authors>Bill Clinton</Authors>
+    <Publisher>Manning</Publisher>
+    <Year>2019</Year>
+  </Book>
+  <Book>
+    <Id>3</Id>
+    <Name>ASP.NET Core Self learning</Name>
+    <Authors>Barack Obama</Authors>
+    <Publisher>Wiley</Publisher>
+    <Year>2017</Year>
+  </Book>
+  <Book>
+    <Id>4</Id>
+    <Name>ASP.NET Core quick course</Name>
+    <Authors>George Bush</Authors>
+    <Publisher>Linda</Publisher>
+    <Year>2022</Year>
+  </Book>
+  <Book>
+    <Id>5</Id>
+    <Name>ASP.NET Core Video Course</Name>
+    <Authors>Vladimir Putin</Authors>
+    <Publisher>Linda</Publisher>
+    <Year>2022</Year>
+  </Book>
+</ArrayOfBook>

@@ -1,0 +1,12 @@
+﻿@model Book
+@{
+	ViewData["Title"] = "Confirm Delete";
+}
+<h1 class="alert-danger text-center">Bạn có muốn xoá sách này?</h1>
+<partial name="_Single" model="Model"></partial>
+
+<form asp-action="Delete">
+	<input type="hidden" asp-for="Id"/>
+	<input type="Submit" class="btn btn-sm btn-danger" value="Delete"/>
+    <a asp-action="Index" class="btn btn-sm btn-info">Back to List</a>
+</form>

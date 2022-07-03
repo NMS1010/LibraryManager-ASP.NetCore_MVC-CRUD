@@ -1,0 +1,11 @@
+﻿@model Book
+@{
+	ViewData["Title"] = "Confirm Update";
+}
+<h1 class="alert-info text-center">Bạn đang chỉnh sửa cuốn sách <br />@Model.Name</h1>
+<form asp-action="Update" enctype="multipart/form-data">
+    <partial name="_Form" model="Model"></partial>
+    <input type="submit" value="Save" class="btn btn-sm btn-outline-primary" /> |
+    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-info">Cancel</a> |
+    <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Back to List</a>
+</form>

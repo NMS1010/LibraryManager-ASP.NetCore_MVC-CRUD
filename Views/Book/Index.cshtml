@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Book>
+
+@{
+	ViewData["Title"] = $"Book list include {Model.Count()} books";
+}
+
+<h1 class="text-center text-success">Library Manager</h1>
+<div>
+	<a asp-action="Create" class="btn btn-sm btn-primary">Create New Book</a> 
+	<form class="input-group w-50 float-right" asp-action="Search" method="get">
+		<input type="text" class="form-control" placeholder="Search for" name="strSearch" />
+		<div class="input-group-append">
+			<button class="btn btn-outline-info" type="submit">Search</button>
+		</div>
+	</form>
+	<table class="table table-sm table-hover">
+		<thead>
+			<tr>
+				<th><a asp-action="Index" asp-route-orderBy="Name" asp-route-asc="@ViewData["Name"]" asp-route-currPage="@ViewData["CurrPage"]">@Html.DisplayNameFor(b => b.Name)</a></th>
+				<th><a asp-action="Index" asp-route-orderBy="Authors" asp-route-asc="@ViewData["Authors"]" asp-route-currPage="@ViewData["CurrPage"]">@Html.DisplayNameFor(b => b.Authors)</a></th>
+				<th><a asp-action="Index" asp-route-orderBy="Publisher" asp-route-asc="@ViewData["Publisher"]" asp-route-currPage="@ViewData["CurrPage"]">@Html.DisplayNameFor(b => b.Publisher)</a></th>
+				<th><a asp-action="Index" asp-route-orderBy="Year" asp-route-asc="@ViewData["Year"]" asp-route-currPage="@ViewData["CurrPage"]">@Html.DisplayNameFor(b => b.Year)</a></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(Book b in Model)
+			{
+				<tr>
+					<td>
+						<a asp-action="Details" asp-route-id="@b.Id">@b.Name</a>
+					</td>
+					<td>@b.Authors</td>
+					<td>@b.Publisher</td>
+					<td>@b.Year</td>
+					<td>
+						<a href="Details/@b.Id" class="btn btn-sm btn-info">Details</a>
+						<a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-sm btn-danger">Delete</a> 
+						<a asp-action="Update" asp-route-id="@b.Id" class="btn btn-sm btn-warning">Update</a> 
+						<a asp-action="Download" asp-route-id="@b.Id" class="btn btn-sm btn-success">Download</a> 
+					</td>
+				</tr>
+			}
+			<tr>
+				<td colspan="5" class="text-center h1 text-danger">Tổng số sách: @Model.Count()</td>
+			</tr>
+		</tbody>
+	</table>
+	<form asp-action="Index" method="get" class="text-center">
+			<p>Page <input type="number" value="@ViewData["CurrPage"]" min="1" max="@ViewData["TotalPages"]" name="currPage"/> of @ViewData["TotalPages"]</p>
+			<button class="btn btn-outline-info" type="submit">Go to</button>
+	</form>
+</div>

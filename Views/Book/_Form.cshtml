@@ -1,0 +1,17 @@
+﻿@model Book
+
+<input name="id" type="hidden" value="@Model.Id"/>
+<h1 class="text-center mb-4 text-success">@Model.Name</h1>
+<label for="Name">Tiêu đề</label>
+<input name="Name" class="form-control mb-2" type="text" id="Name" value="@Model.Name" />
+<label for="Authors">Tác giả</label>
+<input name="Authors" class="form-control mb-2" type="text" id="Authors" value="@Model.Authors" />
+<label for="Publisher">Nhà xuất bản</label>
+<input name="Publisher" class="form-control mb-2" type="text" id="Publisher" value="@Model.Publisher" />
+<label for="Year">Năm xuất bản</label>
+<input name="Year" class="form-control mb-2" type="number" id="Year" value="@Model.Year" />
+<label for="Description">Mô tả</label>
+<textarea name="Description" class="form-control mb-2" type="text" id="Description" value="@Model.Description" ></textarea>
+<label for="file">File</label>
+<input name="file" class="form-control mb-2" type="file" id="file" value="@Model.FileName" />
+

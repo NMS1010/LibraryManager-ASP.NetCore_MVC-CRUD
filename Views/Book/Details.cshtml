@@ -1,0 +1,12 @@
+﻿@model Book
+@{
+	ViewData["Title"] = Model.Name;
+}
+<partial name="_Single" model="Model"></partial>
+
+<div>    
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">Delete</a>
+	<a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-sm btn-warning">Update</a> 
+	<a asp-action="Download" asp-route-id="@Model.Id" class="btn btn-sm btn-success">Download</a> 
+    <a asp-action="Index" class="btn btn-sm btn-info">Back to List</a>    
+</div>
